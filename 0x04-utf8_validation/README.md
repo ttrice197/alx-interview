@@ -1,40 +1,46 @@
+Curriculum <br>
+**Short Specializations** <br>
+
 # 0x04. UTF-8 Validation
 
-# Challenge :
-    Write a method that determines if a given data set represents a valid UTF-8 encoding.
+`Algorithm` `Python`
 
-    - Prototype: def validUTF8(data)
-    - Return: True if data is a valid UTF-8 encoding, else return False
-    - A character in UTF-8 can be 1 to 4 bytes long
-    - The data set can contain multiple characters
-    - The data will be represented by a list of integers
-    - Each integer represents 1 byte of data, therefore you only need to - handle the 8 least significant bits of each integer
+#### Concepts
 
-## Example :
-    carrie@ubuntu:~/0x04-utf8_validation$ cat 0-main.py
-    #!/usr/bin/python3
-    """
-    Main file for testing
-    """
+_For this project, look at these concepts:_
 
-    validUTF8 = __import__('0-validate_utf8').validUTF8
-
-    data = [65]
-    print(validUTF8(data))
-
-    data = [80, 121, 116, 104, 111, 110, 32, 105, 115, 32, 99, 111, 111, 108, 33]
-    print(validUTF8(data))
-
-    data = [229, 65, 127, 256]
-    print(validUTF8(data))
-
-    carrie@ubuntu:~/0x04-utf8_validation$
-    carrie@ubuntu:~/0x04-utf8_validation$ ./0-main.py
-    True
-    True
-    False
-    carrie@ubuntu:~/0x04-utf8_validation$
+* [Technical Interview](https://www.alx-intranet.hbtn.io/concepts/100005)
 
 ## Resources
-- [UTF-8 wikipedia page](https://en.wikipedia.org/wiki/UTF-8)
-- [youtube](https://www.youtube.com/watch?v=MijmeoH9LT4)
+
+**Read or watch:**
+
+* [UTF-8](https://www.en.wikipedia.org/wiki/UTF-8)
+* [Characters, Symbols, and the Unicode Miracle](https://www.youtube.com/watch?v=MijmeoH9LT4)
+
+## General Requirements
+
+* Allowed editors: `vi`, `vim`, `emacs`
+* Files interpreted/compiled on Ubuntu 14.04 LTS using `python3` (version 3.4.3)
+* Files first line exactly shebang `#!/usr/bin/python3`
+* `README.md` file mandatory
+* Code documented and using `PEP 8` style (version 1.7.x)
+* Files executable
+
+## General Learning & Setup
+
+`python.py`
+<details>
+  <summary>Click to show/hide file contents</summary>
+
+  ```python
+  import sys, argv
+  if __name__ == "__main__":
+
+  class ClassAct:
+  	pass
+
+  def fn():
+      pass
+  ```
+</details>

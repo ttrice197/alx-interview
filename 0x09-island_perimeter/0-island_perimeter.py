@@ -1,62 +1,25 @@
 #!/usr/bin/python3
-'''0x09. Island Perimeter'''
+""" Island perimeter problem
+"""
 
 
 def island_perimeter(grid):
-    '''returns the perimeter of the island described in grid'''
-    counter = 0
-    grid_max = len(grid) - 1  # index of the last list in the grid
-    lst_max = len(grid[0]) - 1  # index of the last square in list
-
-    for lst_idx, lst in enumerate(grid):
-        for land_idx, land in enumerate(lst):
-            if land == 1:
-                # left and right
-                if land_idx == 0:
-                    # left side
-                    counter += 1
-
-                    # right side
-                    if lst[land_idx + 1] == 0:
-                        counter += 1
-                elif land_idx == lst_max:
-                    # left side
-                    if lst[land_idx - 1] == 0:
-                        counter += 1
-
-                    # right side
-                    counter += 1
-                else:
-                    # left side
-                    if lst[land_idx - 1] == 0:
-                        counter += 1
-
-                    # right side
-                    if lst[land_idx + 1] == 0:
-                        counter += 1
-
-                # top and down
-                if lst_idx == 0:
-                    # top side
-                    counter += 1
-
-                    # bottom side
-                    if grid[lst_idx + 1][land_idx] == 0:
-                        counter += 1
-                elif lst_idx == grid_max:
-                    # top side
-                    if grid[lst_idx - 1][land_idx] == 0:
-                        counter += 1
-
-                    # bottom side
-                    counter += 1
-                else:
-                    # top side
-                    if grid[lst_idx - 1][land_idx] == 0:
-                        counter += 1
-
-                    # bottom side
-                    if grid[lst_idx + 1][land_idx] == 0:
-                        counter += 1
-
-    return counter
+    """ Calculates perimeter of an island
+    """
+    perimeter = 0
+    for row_index in range(len(grid)):
+        for cell_index in range(len(grid[0])):
+            current_cell = grid[row_index][cell_index]
+            if not current_cell:
+                continue
+            upper_cell = None if not row_index else \
+                grid[row_index - 1][cell_index]
+            left_cell = None if not cell_index else \
+                grid[row_index][cell_index - 1]
+            cell_perimeter = 4
+            if upper_cell:
+                cell_perimeter = cell_perimeter - 2
+            if left_cell:
+                cell_perimeter = cell_perimeter - 2
+            perimeter = perimeter + cell_perimeter
+    return perimeter
